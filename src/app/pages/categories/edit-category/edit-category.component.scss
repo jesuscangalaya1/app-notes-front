@@ -1,0 +1,64 @@
+.dialog-title {
+  text-align: center;
+  color: #1976d2;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.edit-category-dialog {
+  .animated-field {
+    width: 100%;
+    animation: slideInFromLeft 0.4s ease-in-out;
+
+    input {
+      &:focus {
+        border-color: #1976d2;
+        box-shadow: 0 0 8px rgba(25, 118, 210, 0.6);
+      }
+    }
+  }
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+
+  .action-button {
+    flex-grow: 1;
+    margin: 0 8px;
+    border-radius: 4px;
+    padding: 6px 12px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+      background-color: #d6d6d6;
+    }
+  }
+
+  .save-button {
+    background-color: #1976d2;
+    color: white;
+
+    &:hover {
+      background-color: #1558a4;
+      color: #fff;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

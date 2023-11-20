@@ -1,0 +1,31 @@
+<!-- list-notes.component.html -->
+<div class="notes-container">
+  <mat-card class="note-card" *ngFor="let note of notes" >
+    <mat-card-header>
+      <mat-card-title>{{ note.title }}</mat-card-title> <!-- Muestra el título de la nota -->
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ note.description }}</p> <!-- Muestra la descripción de la nota -->
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-icon-button aria-label="Edit note" (click)="openEditDialog(note)" matTooltip="Edit note">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button aria-label="Archive note" (click)="toggleArchiveStatus(note.id, note.archived)" matTooltip="Unarchive">
+        <mat-icon>{{ note.archived ? 'unarchive' : 'archive' }}</mat-icon>
+      </button>
+      <button mat-icon-button aria-label="Delete note" (click)="deleteNote(note.id)" matTooltip="Delete the note">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>
+
+<div class="paginator-container">
+  <mat-paginator [length]="totalItems"
+                 [pageSize]="pageSize"
+                 [pageIndex]="currentPage - 1"
+                 (page)="onPageChange($event.pageIndex + 1)">
+  </mat-paginator>
+</div>

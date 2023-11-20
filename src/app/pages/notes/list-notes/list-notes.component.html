@@ -1,0 +1,60 @@
+<!-- list-notes.component.html -->
+<div class="notes-container">
+  <mat-card class="note-card" *ngFor="let note of notes" >
+    <mat-card-header>
+      <mat-card-title>{{ note.title }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ note.description }}</p>
+    </mat-card-content>
+
+
+    <div class="note-categories">
+      <span *ngFor="let category of note.categories" >
+        {{ category.name }}
+        <mat-icon class="category-remove-icon" (click)="removeCategoryFromNote(category.id, note.id)"
+                  matTooltip="Delete category">close</mat-icon>
+        <mat-icon class="category-edit-icon" (click)="openEditCategoryDialog(category)" matTooltip="Edit category">edit</mat-icon>
+
+      </span>
+    </div>
+    <mat-card-actions>
+      <button mat-icon-button aria-label="Edit note" (click)="openEditDialog(note)" matTooltip="Edit note">
+        <mat-icon>edit</mat-icon>
+
+      </button>
+      <button mat-icon-button aria-label="Archive note" (click)="toggleArchiveStatus(note.id, note.archived)" matTooltip="Archive">
+        <mat-icon>{{ note.archived ? 'unarchive' : 'archive' }}</mat-icon>
+      </button>
+      <button mat-icon-button aria-label="Delete note" (click)="deleteNote(note.id)" matTooltip="Delete note" >
+        <mat-icon>delete</mat-icon>
+      </button>
+
+      <button mat-icon-button (click)="openAssignCategoryDialog(note)" matTooltip="New Category">
+        <mat-icon>add</mat-icon>
+      </button>
+      <!-- Lista desplegable para categorías -->
+      <mat-form-field>
+        <mat-label  >categories</mat-label >
+        <mat-select (selectionChange)="assignCategoryToNote($event.value, note.id)" matTooltip="Categories">
+          <mat-option *ngFor="let category of categories" [value]="category.id">
+            {{ category.name }}
+          </mat-option>
+
+        </mat-select>
+      </mat-form-field>
+    </mat-card-actions>
+
+
+  </mat-card>
+
+</div>
+
+<div class="paginator-container">
+  <mat-paginator [length]="totalItems"
+                 [pageSize]="pageSize"
+                 [pageIndex]="currentPage - 1"
+                 (page)="onPageChange($event.pageIndex + 1)">
+  </mat-paginator>
+</div>
+

@@ -1,0 +1,9 @@
+<!-- category-details.component.html -->
+<div *ngIf="categoryDetails">
+  <h2>{{ categoryDetails.name }}</h2>
+  <!-- Lista de notas -->
+  <ul>
+    <li *ngFor="let note of categoryDetails.notes">{{ note.title }} - {{ note.description }}</li>
+  </ul>
+</div>
+

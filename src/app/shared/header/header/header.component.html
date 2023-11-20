@@ -1,0 +1,26 @@
+<div class="header">
+  <div [routerLink]="['']" class="header__brand">
+    <h1 class="header__title">Notes</h1>
+  </div>
+
+  <div class="header__search-container">
+    <input type="text" class="header__search" placeholder="Search notes for category..." [(ngModel)]="searchTerm" (ngModelChange)="onSearchChange()">
+    <mat-icon class="header__search-clear" *ngIf="searchTerm" (click)="clearSearch()">clear</mat-icon>
+  </div>
+
+  <div class="header__nav">
+    <a [routerLink]="['/list']" class="header__link">
+      <mat-icon>notes</mat-icon> Notes
+    </a>
+    <a [routerLink]="['/create-note']" class="header__link">
+      <mat-icon>add_circle_outline</mat-icon> Add Note
+    </a>
+
+    <a [routerLink]="['/archived']" class="header__link">
+      <mat-icon>archive</mat-icon> Archived Notes
+    </a>
+    <a [routerLink]="['/deleted']" class="header__link">
+      <mat-icon>delete</mat-icon> Paper Bin
+    </a>
+  </div>
+</div>

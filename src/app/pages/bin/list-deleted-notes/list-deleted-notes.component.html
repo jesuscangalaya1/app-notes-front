@@ -1,0 +1,30 @@
+<!-- list-notes.component.html -->
+<div class="notes-container">
+  <mat-card class="note-card" *ngFor="let note of notes" >
+    <mat-card-header>
+      <mat-card-title>{{ note.title }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ note.description }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+
+      <button mat-icon-button (click)="restoreDeletedNote(note.id)" aria-label="Restore note" matTooltip="Restore">
+        <mat-icon>restore</mat-icon>
+      </button>
+      <button mat-icon-button (click)="deleteNotePermanently(note.id)" aria-label="Delete note permanently" matTooltip="Permanently delete">
+        <mat-icon>delete_forever</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>
+
+<div class="paginator-container">
+  <mat-paginator [length]="totalItems"
+                 [pageSize]="pageSize"
+                 [pageIndex]="currentPage - 1"
+                 (page)="onPageChange($event.pageIndex + 1)">
+  </mat-paginator>
+</div>
+

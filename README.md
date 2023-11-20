@@ -1,27 +1,39 @@
-# FrontEnsolversChallenge
+# Front-Endsolvers Challenge
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.10.
+Este es un proyecto Angular para la aplicación "Front-Endsolvers Challenge".
 
-## Development server
+## Requisitos Previos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Para ejecutar este proyecto, necesitas tener instalado:
 
-## Code scaffolding
+- **Node.js (v16.16.0)**: Necesario para ejecutar el entorno de desarrollo y gestionar paquetes. Puedes descargarlo desde [Node.js](https://nodejs.org/).
+- **npm (v8.11.0)**: Gestor de paquetes de Node.js. Generalmente se instala junto con Node.js.
+- **Angular CLI**: Recomendamos instalar la última versión disponible. Instálalo globalmente con `npm install -g @angular/cli`.
+- Un navegador web actualizado (recomendamos Google Chrome o Firefox).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Configuración del Proyecto
 
-## Build
+Sigue estos pasos para configurar el proyecto en tu entorno local:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clona el repositorio a tu máquina local.
+2. Navega al directorio del proyecto desde tu terminal.
+3. Ejecuta `npm install` para instalar las dependencias del proyecto.
 
-## Running unit tests
+## Ejecución del Proyecto
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Una vez configurado, puedes ejecutar el proyecto con los siguientes comandos:
+- `npm start` o `ng serve`: Inicia un servidor de desarrollo. Abre `http://localhost:4200/` para ver tu aplicación en el navegador.
+- `ng build`: Construye el proyecto. Los artefactos de construcción se almacenarán en el directorio `dist/`.
 
-## Running end-to-end tests
+## Características Principales
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Uso de Angular 15.2 para una SPA (Single Page Application) moderna y reactiva.
+- Integración con Angular Material 15.2.9 para componentes de UI elegantes y consistentes.
+- Navegación y routing con Angular Router 15.2.
+- Manejo de formularios reactivos y validaciones con Angular Forms 15.2.
+- Animaciones elegantes con Angular Animations 15.2.
+- Alertas y notificaciones con SweetAlert2.
 
-## Further help
+## Contacto
+jesuscangalaya1@gmail.com
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

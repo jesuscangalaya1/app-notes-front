@@ -1,0 +1,65 @@
+.edit-note-card {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  animation: fadeInUp 0.5s ease-out; // Animación de entrada
+
+  mat-card-title {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .full-width-input {
+    width: 100%;
+    margin-bottom: 20px;
+
+    mat-label {
+      color: rgba(0, 0, 0, 0.6);
+    }
+
+    input, textarea {
+      font-size: 1em;
+      transition: box-shadow 0.3s ease; // Transición para el efecto de foco
+
+      &:focus {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); // Sombra al enfocar
+      }
+    }
+
+    textarea {
+      resize: vertical;
+    }
+  }
+  .button-group {
+    display: flex;
+    justify-content: flex-start; // Alinea los botones uno al lado del otro al inicio
+    gap: 10px; // Espacio entre los botones
+    margin-top: 15px; // Margen en la parte superior
+
+    button {
+      transition: background-color 0.3s, box-shadow 0.3s; // Transición para efecto hover
+
+      &:nth-child(2) { // Estilo específico para el botón de cancelar
+        color: #757575; // Color para el botón de cancelar
+
+        &:hover, &:focus {
+          background-color: #e0e0e0; // Color de fondo al pasar el ratón
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

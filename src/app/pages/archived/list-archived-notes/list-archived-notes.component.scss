@@ -1,0 +1,178 @@
+.notes-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); // Crea dos columnas
+  gap: 40px; // Espacio entre filas y columnas
+  padding: 40px;
+  .note-card {
+    width: calc(100% - 60px); // Ancho ajustado para permitir un poco de espacio a los lados
+    max-width: 800px; // Máximo ancho para tarjetas grandes
+    margin: 0 auto; // Centrado automático
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12); // Sombra sutil para profundidad
+    border-radius: 8px; // Bordes redondeados para un aspecto moderno
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden; // Asegura que todo el contenido se mantenga dentro de los bordes redondeados
+
+    &:hover {
+      transform: translateY(-5px); // Eleva la tarjeta ligeramente al pasar el ratón
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18); // Sombra más pronunciada al pasar el ratón
+    }
+
+    mat-card-header {
+      background-color: #1976d2; // Color de fondo para el encabezado
+      color: white; // Color del texto para el encabezado
+      padding: 16px; // Espaciado interno para el encabezado
+
+      .mat-card-title {
+        font-size: 1.2rem; // Tamaño de fuente más grande para el título
+      }
+    }
+
+    mat-card-content {
+      padding: 20px;
+      font-size: 0.9em; // Tamaño de letra para el contenido
+      color: rgba(0, 0, 0, 0.7); // Color del texto para el contenido
+    }
+
+    mat-card-actions {
+      padding: 16px; // Espaciado interno para las acciones
+      display: flex;
+      justify-content: space-between;
+      background-color: rgba(0, 0, 0, 0.05); // Fondo ligeramente gris para las acciones
+
+      button {
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+          transform: translateY(-2px);
+          border: 1px solid rgba(0, 0, 0, 0.1); // Borde sutil al pasar el ratón
+        }
+        mat-card-header, mat-card-content, mat-card-actions {
+          transition: all 0.3s ease; // Suaviza las transiciones de contenido
+        }
+        mat-icon {
+          color: rgba(0, 0, 0, 0.7); // Color del icono
+
+          &:hover {
+            color: #d32f2f; // Cambiar el color al pasar el mouse (por ejemplo, rojo para eliminar)
+          }
+        }
+      }
+    }
+    .note-categories {
+
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      padding: 10px 20px;
+
+      span {
+        display: inline-flex;
+        align-items: center;
+        background-color: #f1f1f1;
+        color: #616161;
+        padding: 5px 10px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        border-radius: 16px;
+        font-size: 0.8em;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+
+        &:hover {
+          background-color: #e0e0e0;
+        }
+      }
+      .category-remove-icon {
+        margin-left: 8px;
+        cursor: pointer;
+        color: #ff5252; // Un color que indica eliminación, como rojo
+
+        &:hover {
+          color: #ff1744;
+        }
+      }
+      .category-edit-icon {
+        margin-left: 5px;
+        cursor: pointer;
+        color: #4caf50; // Un color que indica edición, como verde
+
+        &:hover {
+          color: #388e3c;
+        }
+      }
+
+      .category-edit-icon, .category-remove-icon {
+        transition: transform 0.3s ease, color 0.3s ease;
+
+        &:hover {
+          transform: scale(1.2);
+          animation: pulse 1s infinite;
+        }
+      }
+    }
+  }
+}
+.paginator-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px); // Elevación al pasar el ratón
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  mat-paginator {
+    color: #424242;
+
+    .mat-icon-button {
+      color: #424242;
+      background-color: white;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      line-height: 36px;
+      margin: 0 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: #e0e0e0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        transform: rotate(360deg); // Rotación completa al pasar el ratón
+      }
+    }
+
+    .mat-paginator-navigation-next,
+    .mat-paginator-navigation-previous {
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1); // Aumento de tamaño al pasar el ratón
+      }
+    }
+
+    .mat-paginator-range-label {
+      margin: 0 20px;
+      font-weight: bold;
+    }
+
+    .mat-select-value {
+      color: #1976d2;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: darken(#1976d2, 10%); // Oscurecimiento al pasar el ratón
+      }
+    }
+  }
+}
+

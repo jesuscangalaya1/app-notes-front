@@ -1,0 +1,101 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  padding: 8px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Sombra sutil para profundidad
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Sombra más pronunciada al pasar el ratón
+  }
+
+  &__brand {
+    margin: 0 3.5rem;
+    font-style: italic;
+    align-self: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05); // Aumento sutil al pasar el ratón
+    }
+
+    .header__title {
+      color: #1976d2; // Color destacado para el título
+      font-size: 1.4rem; // Tamaño de fuente mayor para el título
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-right: 3.5rem;
+
+    .header__link {
+      display: flex;
+      align-items: center;
+      margin-left: 2rem;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: rgb(31, 31, 31);
+      transition: color 0.3s ease, transform 0.3s ease;
+
+      &:hover {
+        color: #1976d2;
+        transform: translateY(-2px); // Ligero ascenso al pasar el ratón
+
+        mat-icon {
+          color: #1976d2;
+          transform: rotate(360deg); // Rotación del icono al pasar el ratón
+          transition: transform 0.5s ease;
+        }
+      }
+
+      mat-icon {
+        margin-right: 8px;
+      }
+    }
+  }
+
+  &__search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-grow: 2; // Permite que el contenedor de búsqueda crezca más
+    max-width: 600px; // Establece un ancho máximo para el campo de búsqueda
+
+    .header__search {
+      width: 100%; // Asegura que el campo de búsqueda ocupe todo el contenedor
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      padding: 8px 40px 8px 20px; // Espacio para el icono de borrado
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, width 0.3s ease;
+
+      &:focus {
+        outline: none;
+        border-color: #1976d2;
+        box-shadow: 0 0 8px rgba(33, 150, 243, 0.4);
+      }
+    }
+
+    .header__search-clear {
+      position: absolute;
+      right: 10px;
+      top: 40%; // Posiciona el icono a la mitad de la altura del contenedor
+      transform: translateY(-50%); // Desplaza el icono hacia arriba la mitad de su altura para centrarlo verticalmente
+      cursor: pointer;
+      color: #1976d2;
+      transition: color 0.3s ease;
+      &:hover {
+        color: darken(#1976d2, 10%);
+      }
+    }
+  }
+}

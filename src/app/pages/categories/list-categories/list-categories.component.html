@@ -1,0 +1,11 @@
+<div class="categories-container">
+  <mat-chip-listbox *ngIf="categories">
+    <mat-chip-option *ngFor="let category of categories" class="category-chip">
+      {{ category.name }}
+    </mat-chip-option>
+  </mat-chip-listbox>
+  <button mat-mini-fab class="add-category-btn" (click)="openCreateCategoryDialog()">
+    <mat-icon>add</mat-icon>
+  </button>
+
+</div>

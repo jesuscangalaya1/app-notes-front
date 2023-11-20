@@ -1,1 +1,94 @@
-/* You can add global styles to this file, and also import other style files */
+/* styles.scss */
+
+// Colores y fuentes
+$background-color: #f1f1f1;
+$text-color: #333;
+$font-family: 'Roboto', sans-serif;
+$primary-color: #1976d2; // Azul para elementos primarios
+$secondary-color: #d32f2f; // Rojo para elementos secundarios
+$link-color: #1976d2; // Color para enlaces
+
+// Estilos globales
+body {
+  background-color: $background-color;
+  color: $text-color;
+  font-family: $font-family;
+  margin: 0;
+  padding: 0;
+}
+
+// Configuración de tipografía
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+}
+
+// Botones y enlaces
+button, a {
+  font-family: inherit;
+  text-decoration: none;
+  color: $link-color;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Botones primarios y secundarios
+.btn-primary {
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+.btn-secondary {
+  background-color: $secondary-color;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($secondary-color, 10%);
+  }
+}
+
+// Estilos para formularios
+input, select, textarea {
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+
+  &:focus {
+    border-color: $primary-color;
+    outline: none;
+  }
+}
+
+// Utilidades comunes
+.text-center {
+  text-align: center;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+/* app.component.scss o styles.scss */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Resto de tus estilos globales... */
