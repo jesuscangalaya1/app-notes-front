@@ -1,7 +1,7 @@
 export const environment = {
   production: false,
-  apiUrlNotes: 'http://localhost:8080/api/notes',
-  apiUrlCategories: 'http://localhost:8080/api/categories',
+  apiUrlNotes: 'https://api-app-notes-ensolvers.up.railway.app/api/notes',
+  apiUrlCategories: 'https://api-app-notes-ensolvers.up.railway.app/api/categories',
 
 
 };
