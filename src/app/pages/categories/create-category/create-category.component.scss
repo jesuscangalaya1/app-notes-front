@@ -1,0 +1,44 @@
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #fff;
+
+  .form-title {
+    text-align: center;
+    color: #151414;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+  }
+
+  .category-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .category-form-field {
+      width: 100%;
+
+      input {
+        &:focus {
+          border-color: #4f87ff; // Color amarillo de Google Keep
+        }
+      }
+    }
+
+    button {
+      transition: background-color 0.3s, transform 0.3s;
+
+      &:hover {
+        background-color: #2865ff; // Un amarillo similar al de Google Keep
+        transform: translateY(-2px);
+      }
+
+      &:active {
+        transform: translateY(1px);
+      }
+    }
+  }
+}

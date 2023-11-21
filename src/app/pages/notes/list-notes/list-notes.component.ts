@@ -183,9 +183,13 @@ export class ListNotesComponent implements OnInit {
       response => {
 
         console.log('Categoría actualizada', response);
-        this.loadNotes();
-        window.location.reload();
-        },
+
+        this.alertService.notification('Category successfully updated!', 'success');
+        setTimeout(() => {
+          this.loadNotes();
+          location.reload();
+        }, 1000);
+      },
       error => {
         console.error('Error al actualizar la categoría', error);
       }
@@ -193,7 +197,7 @@ export class ListNotesComponent implements OnInit {
   }
   openAssignCategoryDialog(note: any) {
     const dialogRef = this.dialog.open(CreateCategoryComponent, {
-      width: '250px',
+      width: '500px',
       data: { note: note, categories: this.categories }
     });
 

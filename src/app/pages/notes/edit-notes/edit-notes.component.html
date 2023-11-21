@@ -1,20 +1,20 @@
 <mat-card class="edit-note-card">
   <form (ngSubmit)="submitNote()">
-    <mat-card-title>Editar Nota</mat-card-title>
+    <mat-card-title>Edit Note</mat-card-title>
 
     <mat-form-field class="full-width-input">
-      <mat-label>Título</mat-label>
+      <mat-label>Title</mat-label>
       <input matInput [(ngModel)]="note.title" name="title">
     </mat-form-field>
 
     <mat-form-field class="full-width-input">
-      <mat-label>Contenido</mat-label>
+      <mat-label>Content</mat-label>
       <textarea matInput [(ngModel)]="note.description" name="description" rows="5"></textarea>
     </mat-form-field>
 
     <div class="button-group">
-      <button mat-raised-button color="primary" type="submit">Actualizar</button>
-      <button mat-button type="button" (click)="cancelEdit()">Cancelar</button>
+      <button mat-raised-button color="primary" type="submit">Update</button>
+      <button mat-button type="button" (click)="cancelEdit()">Cancel</button>
     </div>
   </form>
 </mat-card>

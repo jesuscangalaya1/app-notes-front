@@ -1,18 +1,18 @@
 <!-- create-notes.component.html -->
 <mat-card class="create-note-card">
   <form (ngSubmit)="submitNote()">
-    <mat-card-title>Crear Nueva Nota</mat-card-title>
+    <mat-card-title>Create New Note</mat-card-title>
 
     <mat-form-field class="full-width-input">
-      <mat-label>Título</mat-label>
-      <input matInput [(ngModel)]="newNote.title" name="title" placeholder="Introduce el título de la nota">
+      <mat-label>Title</mat-label>
+      <input matInput [(ngModel)]="newNote.title" name="title" placeholder="Enter the title of the note">
     </mat-form-field>
 
     <mat-form-field class="full-width-input">
-      <mat-label>Contenido</mat-label>
-      <textarea matInput [(ngModel)]="newNote.description" name="description" rows="5" placeholder="Escribe el contenido aquí..."></textarea>
+      <mat-label>Content</mat-label>
+      <textarea matInput [(ngModel)]="newNote.description" name="description" rows="5" placeholder="Write the content here..."></textarea>
     </mat-form-field>
 
-    <button mat-raised-button color="primary" type="submit">Guardar</button>
+    <button mat-raised-button color="primary" type="submit">Save</button>
   </form>
 </mat-card>

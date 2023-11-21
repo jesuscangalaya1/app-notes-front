@@ -1,6 +1,11 @@
-<form (ngSubmit)="submitCategory()">
-  <input type="text" [(ngModel)]="category.name" name="name" placeholder="Nombre de la categoría">
-  <button type="submit">Crear Categoría</button>
-</form>
-
+<div class="form-container">
+  <h2 class="form-title">Create a New Category</h2>
+  <form (ngSubmit)="submitCategory()" class="category-form">
+    <mat-form-field appearance="fill" class="category-form-field">
+      <mat-label>Category name</mat-label>
+      <input matInput [(ngModel)]="category.name" name="name" placeholder="Category name">
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Create Category</button>
+  </form>
+</div>
 
